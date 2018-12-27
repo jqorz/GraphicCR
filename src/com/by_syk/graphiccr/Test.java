@@ -16,19 +16,14 @@
 
 package com.by_syk.graphiccr;
 
-import com.by_syk.graphiccr.core.GraphicC1Translator;
-import com.by_syk.graphiccr.core.GraphicC2Translator;
-import com.by_syk.graphiccr.core.GraphicC3Translator;
-import com.by_syk.graphiccr.core.GraphicC4Translator;
-import com.by_syk.graphiccr.core.GraphicC5Translator;
-import com.by_syk.graphiccr.core.GraphicC6Translator;
-import com.by_syk.graphiccr.core.GraphicC7Translator;
-import com.by_syk.graphiccr.core.GraphicC8Translator;
+import com.by_syk.graphiccr.core.*;
 import com.by_syk.graphiccr.util.ExtraUtil;
 
 import java.io.File;
 
 public class Test {
+    public static final String ROOT = "D:/Android/Coding_Java/GraphicCR";
+
     public static void main(String[] args) {
         testGraphicC8();
 
@@ -97,7 +92,7 @@ public class Test {
     private static void testGraphicC3() {
         GraphicC3Translator translator = GraphicC3Translator.getInstance();
         File rawDir = new File("D:/Coding/Coding_JAVA/GraphicCR/train/raw/graphicc3_raw");
-        File trainFile = new File("D:/Coding/Coding_JAVA/GraphicCR/train/out/3/train.jpg");
+        File trainFile = new File("D:/Coding/Coding_JAVA/GraphicCR/train/out/3/train.png");
         File testDir = new File("D:/Coding/Coding_JAVA/GraphicCR/train/test/3");
 
         translator.train(rawDir, trainFile);
@@ -232,26 +227,26 @@ public class Test {
 
     private static void testGraphicC8() {
         GraphicC8Translator translator = GraphicC8Translator.getInstance();
-        File rawDir = new File("D:/Coding/Coding_JAVA/GraphicCR/train/raw/graphicc8_raw");
-        File trainFile = new File("D:/Coding/Coding_JAVA/GraphicCR/train/out/8/train.jpg");
-        File testDir = new File("D:/Coding/Coding_JAVA/GraphicCR/train/test/8");
+        File rawDir = new File(ROOT + "/train/raw/graphicc8_raw");
+        File trainFile = new File(ROOT + "/train/out/8/train.png");
+        File testDir = new File(ROOT + "/train/test/8");
 
         translator.train(rawDir, trainFile);
 
         System.out.println("TRAIN DONE");
 
-        for (int i = 0; i < 20; ++i) {
-            ExtraUtil.downloadFile("http://jiaowu.ahmu.edu.cn//SercurityCode",
-                    new File(testDir, System.currentTimeMillis() + ".jpg"));
-            System.out.println("DOWNLOAD TEST " + (i + 1));
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        System.out.println("DOWNLOAD TEST DONE");
+//        for (int i = 0; i < 10; ++i) {
+//            ExtraUtil.downloadFile("http://jiaowu.ahmu.edu.cn//SercurityCode",
+//                    new File(testDir, System.currentTimeMillis() + ".jpg"));
+//            System.out.println("DOWNLOAD TEST " + (i + 1));
+//            try {
+//                Thread.sleep(100);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        System.out.println("DOWNLOAD TEST DONE");
 
         for (File file : testDir.listFiles()) {
             String result = translator.translate(file);

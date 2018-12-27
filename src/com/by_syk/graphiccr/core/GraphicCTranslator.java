@@ -69,7 +69,13 @@ public class GraphicCTranslator {
      * <br />图形尺寸为 62*22
      */
     public static final int TYPE_7 = 7;
-
+    /**
+     * 第8类图形验证码识别
+     * <br />针对截至 2018/12/26 为止安徽医科大学新系统登录用的验证码
+     * <br />图形尺寸为 200*80
+     *
+     * @author By_jqorz
+     */
     public static final int TYPE_8 = 8;
 
     /**

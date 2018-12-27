@@ -64,9 +64,10 @@
 * 第8类  
 :smile: 字符数固定  
 :smile: 字符明度基本一致，阀值小于 `0.8`  
-:smile: 无字形变化，含数字、大写字母 
-:persevere: 每个字符相对位置会变 
-:smile: 有干扰线，但可忽略
+:smile: 无字形变化，含数字、大写字母  
+:persevere: 每个字符相对位置会变  
+:smile: 有干扰线，但可忽略  
+:persevere: 字符有旋转
 ![graphicc8](art/ps_graphicc8.png)
 
 ### 开始使用

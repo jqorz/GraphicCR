@@ -16,6 +16,8 @@
 
 package com.by_syk.graphiccr.core;
 
+import com.by_syk.graphiccr.Test;
+
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -26,7 +28,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 /**
- * 第3类图形验证码识别
+ * 第8类图形验证码识别
  * <br />针对截至 2018/12/26 为止安徽医科大学新系统登录用的验证码
  * <br />图形尺寸为 200*80
  *
@@ -36,11 +38,11 @@ public class GraphicC8Translator {
     /**
      * 元字符宽度，应该为分离元字符的最大宽度
      */
-    private static final int UNIT_W = 60;
+    private static final int UNIT_W = 63;
     /**
      * 元字符高度
      */
-    private static final int UNIT_H = 60;
+    private static final int UNIT_H = 63;
     /**
      * 训练元字符数
      */
@@ -135,8 +137,8 @@ public class GraphicC8Translator {
      */
     private List<BufferedImage> split(BufferedImage img) throws Exception {
         List<BufferedImage> subImgs = new ArrayList<BufferedImage>();
-        subImgs.add(fix(img.getSubimage(1, 8, 60, UNIT_H)));
-        subImgs.add(fix(img.getSubimage(59, 8, 48, UNIT_H)));
+        subImgs.add(fix(img.getSubimage(1, 8, 63, UNIT_H)));
+        subImgs.add(fix(img.getSubimage(58, 8, 50, UNIT_H)));
         subImgs.add(fix(img.getSubimage(105, 8, 53, UNIT_H)));
         subImgs.add(fix(img.getSubimage(150, 8, 50, UNIT_H)));
         return subImgs;
@@ -206,7 +208,7 @@ public class GraphicC8Translator {
      */
     private BufferedImage loadTrainData() throws Exception {
         if (trainImg == null) {
-            File file = new File("D:/Coding/Coding_JAVA/GraphicCR/train/out/8/train.png");
+            File file = new File(Test.ROOT+"/train/out/8/train.png");
             trainImg = ImageIO.read(file);
         }
 
@@ -266,7 +268,7 @@ public class GraphicC8Translator {
                 List<BufferedImage> listImg = split(img);
                 String[] parts = file.getName().split("\\.");
                 char[] chars = parts[0].toCharArray();
-                char[] addFlags;//如果在测试时发现部分字母错误，则标为1，以增加该字母至训练集，其余字母标为0，则不将其余字母加到训练集
+                char[] addFlags;//如果在测试时字母标为0，则不将该字母加到训练集
                 if (parts.length > 2) {
                     addFlags = parts[1].toCharArray();
                 } else {
