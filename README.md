@@ -12,6 +12,7 @@
 | 第5类 | [![ncu](http://218.64.56.18/jsxsd/verifycode.servlet?t=0.7339572516226678)](http://218.64.56.18/jsxsd/verifycode.servlet?t=0.7339572516226678) | [南昌大学教学一体化服务平台](http://218.64.56.18/jsxsd) | 100 / 100 = **100%**，单：400 / 400 = 100% |
 | 第6类 | [![ahut](http://211.70.149.135:88/CheckCode.aspx)](http://211.70.149.135:88/CheckCode.aspx) | [安徽工业大学教务管理系统](http://211.70.149.135:88) | 100 / 100 = **100%**，单：400 / 400 = 100% |
 | 第7类 | [![qau](http://jwglxt.qau.edu.cn/verifycode.servlet)](http://jwglxt.qau.edu.cn/verifycode.servlet) | [青岛农业大学教学一体化服务平台](http://jwglxt.qau.edu.cn) | 100 / 100 = **100%**，单：400 / 400 = 100% |
+| 第8类 | [![qau](http://jiaowu.ahmu.edu.cn//SercurityCode)](http://jiaowu.ahmu.edu.cn//SercurityCode) | [安徽医科大学教务管理系统](http://jiaowu.ahmu.edu.cn/)
 
 图形样本特征分析：
 * 第1类  
@@ -60,7 +61,13 @@
 :smile: 每个字符相对位置固定  
 :smile: 有干扰线，但可忽略
 ![graphicc7](art/ps_graphicc7.png)
-
+* 第8类  
+:smile: 字符数固定  
+:smile: 字符明度基本一致，阀值小于 `0.8`  
+:smile: 无字形变化，含数字、大写字母 
+:persevere: 每个字符相对位置会变 
+:smile: 有干扰线，但可忽略
+![graphicc8](art/ps_graphicc8.png)
 
 ### 开始使用
 

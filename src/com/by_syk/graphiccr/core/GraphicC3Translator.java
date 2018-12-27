@@ -210,10 +210,8 @@ public class GraphicC3Translator {
      */
     private BufferedImage loadTrainData() throws Exception {
         if (trainImg == null) {
-                trainImg = ImageIO.read(this.getClass().getResourceAsStream("/resources/img/3/train.png"));
-//                File file = new File(this.getClass().getResource("/resources/img/3/train.png").getPath());
-//            File file = new File("E:/JavaWebProjects/SchTtable/reserve/蚌埠医学院/ImageCode/train/train.png");
-//            trainImg = ImageIO.read(file);
+            File file = new File("D:/Coding/Coding_JAVA/GraphicCR/train/out/3/train.png");
+            trainImg = ImageIO.read(file);
         }
       
       return trainImg;
