@@ -112,7 +112,7 @@ public class GraphicC8Translator {
         }
 
         for (int x = 1; x < width - 1; ++x) {
-            for (int y = 13; y < height - 1; ++y) {
+            for (int y = 8; y < height - 3; ++y) {
                 if (img.getRGB(x, y) == TARGET_COLOR) {
                     int shotNum = 0;
                     for (int i = 0; i < 9; ++i) {
